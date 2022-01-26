@@ -1,4 +1,4 @@
-package com.brahatksingh.runningappyt
+package com.brahatksingh.runtrack
 
 import org.junit.Test
 

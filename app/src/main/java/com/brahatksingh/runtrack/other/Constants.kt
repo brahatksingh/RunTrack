@@ -1,4 +1,4 @@
-package com.brahatksingh.runningappyt.other
+package com.brahatksingh.runtrack.other
 
 object Constants {
 

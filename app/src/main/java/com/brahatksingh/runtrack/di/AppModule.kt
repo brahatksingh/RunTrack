@@ -1,9 +1,9 @@
-package com.brahatksingh.runningappyt.di
+package com.brahatksingh.runtrack.di
 
 import android.content.Context
 import androidx.room.Room
-import com.brahatksingh.runningappyt.db.RunningDatabase
-import com.brahatksingh.runningappyt.other.Constants.RUNNING_DATABASE_NAME
+import com.brahatksingh.runtrack.db.RunningDatabase
+import com.brahatksingh.runtrack.other.Constants.RUNNING_DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

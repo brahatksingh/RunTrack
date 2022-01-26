@@ -1,9 +1,10 @@
-package com.brahatksingh.runningappyt
+package com.brahatksingh.runtrack.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.brahatksingh.runningappyt.db.RunDAO
+import com.brahatksingh.runtrack.R
+import com.brahatksingh.runtrack.db.RunDAO
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.brahatksingh.runningappyt.db
+package com.brahatksingh.runtrack.db
 
 import android.graphics.Bitmap
 import androidx.room.Entity

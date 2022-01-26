@@ -1,4 +1,4 @@
-package com.brahatksingh.runningappyt.db
+package com.brahatksingh.runtrack.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
