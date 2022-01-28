@@ -61,6 +61,10 @@ class TrackingService : LifecycleService() {
         }
     }
 
+    private fun pauseService() {
+        isTracking.postValue(false)
+    }
+
     @SuppressLint("MissingPermission")
     private fun updateLocationTracking(isTracking : Boolean) {
         if(isTracking) {
@@ -104,10 +108,12 @@ class TrackingService : LifecycleService() {
                     }
                     else {
                         Timber.d("Resuming Service")
+                        startForegroundService()
                     }
                     Timber.d("Started or Resumed Service")
                 }
                 Constants.ACTION_PAUSE_SERVICE -> {
+                    pauseService()
                     Timber.d("Paused Service")
                 }
                 Constants.ACTION_STOP_SERVICE -> {
@@ -133,7 +139,7 @@ class TrackingService : LifecycleService() {
             .setAutoCancel(false)
             .setOngoing(true)
             .setSmallIcon(R.drawable.ic_directions_run_black_24dp)
-            .setContentTitle("RunTrack : RUNNING")
+            .setContentTitle("Tracking Your Run")
             .setContentText("00:00:00")
             .setContentIntent(getMainActivityPendingIntent())
 
