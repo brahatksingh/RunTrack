@@ -25,7 +25,9 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
-
+        bottomNavigationView.setOnNavigationItemReselectedListener {
+            // NO ACTION
+        }
         navHostFragment.findNavController().addOnDestinationChangedListener{ p1,p2,p3 ->
             when(p2.id) {
                 R.id.settingsFragment,R.id.runFragment,R.id.statisticsFragment -> {

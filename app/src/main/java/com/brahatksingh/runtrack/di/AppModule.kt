@@ -1,8 +1,10 @@
 package com.brahatksingh.runtrack.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
 import com.brahatksingh.runtrack.db.RunningDatabase
+import com.brahatksingh.runtrack.other.Constants
 import com.brahatksingh.runtrack.other.Constants.RUNNING_DATABASE_NAME
 import dagger.Module
 import dagger.Provides
@@ -28,6 +30,26 @@ object AppModule {
     @Singleton
     @Provides
     fun provideRunDao(db: RunningDatabase) = db.getRunDao()
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(@ApplicationContext app :Context) = app.getSharedPreferences(Constants.SHARED_PREFERENCES_NAME,
+        Context.MODE_PRIVATE)
+
+    @Singleton
+    @Provides
+    fun provideName(sharedPreferences: SharedPreferences) = sharedPreferences.getString(Constants.KEY_NAME,"DEFAULT NAME") ?: "DEFAULT NAME"
+
+
+    @Singleton
+    @Provides
+    fun provideWeight(sharedPreferences: SharedPreferences) = sharedPreferences.getFloat(Constants.KEY_WEIGHT,80f)
+
+    @Singleton
+    @Provides
+    fun provideFirstTimeToggle(sharedPreferences: SharedPreferences) = sharedPreferences.getBoolean(Constants.KEY_FIRST_TIME_TOGGLE,true)
+
+
 }
 
 
