@@ -40,8 +40,7 @@ class SetupFragment : Fragment(R.layout.fragment_setup) {
             else {
                 Toast.makeText(requireContext(),"Please enter fields properly",Toast.LENGTH_SHORT).show()
             }
-            val action = SetupFragmentDirections.actionSetupFragmentToRunFragment()
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.runFragment)
 
         }
     }
